@@ -4,17 +4,19 @@
   </header>
   <form>
     <label for="pensamento">Pensamento</label>
-    <input type="textarea" name="pensamento" class="input" id="pensamento" placeholder="Digite o pensamento" [value]="pensamento.conteudo">
+    <input type="textarea" name="pensamento" class="input" id="pensamento" placeholder="Digite o pensamento"
+      [(ngModel)]="pensamento.conteudo">
 
     <label for="autoria">Autoria</label>
-    <input type="textarea" name="autoria" class="input" id="autoria" placeholder="Digite a autoria ou fonte" [value]="pensamento.autoria">
+    <input type="textarea" name="autoria" class="input" id="autoria" placeholder="Digite a autoria ou fonte"
+      [(ngModel)]="pensamento.autoria">
 
     <label for="modelo">Selecione o modelo do card:</label>
     <div class="container-radio">
       <div class="radio-modelo">
         <label for="modelo1">
-          <input type="radio" name="modelo-card" id="modelo1" value="modelo1">
-          <div class="custom-radio" >
+          <input type="radio" name="modelo-card" id="modelo1" value="modelo1" [(ngModel)]="pensamento.modelo">
+          <div class="custom-radio">
             <span></span>
           </div>
           <span>Modelo 1</span>
@@ -29,7 +31,7 @@
 
       <div class="radio-modelo">
         <label for="modelo2">
-          <input type="radio" name="modelo-card" id="modelo2" value="modelo2">
+          <input type="radio" name="modelo-card" id="modelo2" value="modelo2" [(ngModel)]="pensamento.modelo">
           <div class="custom-radio">
             <span></span>
           </div>
@@ -45,7 +47,7 @@
 
       <div class="radio-modelo">
         <label for="modelo3">
-          <input type="radio" name="modelo-card" id="modelo3" value="modelo3">
+          <input type="radio" name="modelo-card" id="modelo3" value="modelo3" [(ngModel)]="pensamento.modelo">
           <div class="custom-radio">
             <span></span>
           </div>
@@ -60,8 +62,8 @@
       </div>
     </div>
     <div class="acoes">
-      <button class="botao">Salvar</button>
-      <button class="botao">Cancelar</button>
+      <button (click)="criarPensamento()" class="botao">Salvar</button>
+      <button (click)="cancelar()" class="botao">Cancelar</button>
     </div>
   </form>
 </section>
